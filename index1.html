@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>dd</title>
+        <script>
+            async function onLoad(){
+                const response = await fetch("http:/localhost:4000/apple/");
+                const result = await response.text();
+                document.getElementsByTagName("div")[0].innerText = result;
+            }
+        </script>
+    </head>
+
+    <body onload="onload();">
+        <div></div>
+    </body>
+</html>
