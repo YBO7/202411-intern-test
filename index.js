@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const pg = require('pg');
 const app = express();
+const PORT = process.env.PORT || 4001;
 const port = 4001;
 
 const client = new pg.Pool({
@@ -33,7 +34,7 @@ app.get('/menu', async (req, res) => {
         'SELECT * FROM public.fruit_world'
     );
     // console.log(result.rows[1].img);
-    res.send(result.rows);
+    res.send(result.rows[0].IMG);
 });
 
 app.listen(port, () => {
